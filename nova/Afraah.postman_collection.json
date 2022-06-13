@@ -1,0 +1,741 @@
+{
+	"info": {
+		"_postman_id": "f2b6c31d-9e54-4568-80ff-0094fff0d9b8",
+		"name": "Afraah",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "ahmed2020",
+									"type": "default"
+								},
+								{
+									"key": "email",
+									"value": "ahmed20222583@mail.com",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "default"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "123456789",
+									"type": "default"
+								},
+								{
+									"key": "gender",
+									"value": "male",
+									"type": "default"
+								},
+								{
+									"key": "phone",
+									"value": "1221212",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://admin.afraah.com/api/auth/register",
+							"protocol": "https",
+							"host": [
+								"admin",
+								"afraah",
+								"com"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "ahmed2020",
+									"type": "default",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "admin@admin.com",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "123456789",
+									"type": "default",
+									"disabled": true
+								},
+								{
+									"key": "gender",
+									"value": "male",
+									"type": "default",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "https://admin.afraah.com/api/auth/login",
+							"protocol": "https",
+							"host": [
+								"admin",
+								"afraah",
+								"com"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1MiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvYWRtaW4uYWZyYWFoLmNvbVwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY0NDc1ODE2OSwiZXhwIjo1MjQ0NzU4MTY5LCJuYmYiOjE2NDQ3NTgxNjksImp0aSI6ImR6NHQzdHRTV3RBd2t0dDgiLCJzdWIiOjYzLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.QXPIfZ3H7MFs5YQZAfvQCans4unbJe2LrscfmFiYxPg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "ahmed2020",
+									"type": "default",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "ahmed2020@mail.com",
+									"type": "default",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "default",
+									"disabled": true
+								},
+								{
+									"key": "password_confirmation",
+									"value": "123456789",
+									"type": "default",
+									"disabled": true
+								},
+								{
+									"key": "gender",
+									"value": "male",
+									"type": "default",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "https://admin.afraah.com/api/auth/user-profile",
+							"protocol": "https",
+							"host": [
+								"admin",
+								"afraah",
+								"com"
+							],
+							"path": [
+								"api",
+								"auth",
+								"user-profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1MiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvYWRtaW4uYWZyYWFoLmNvbVwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY0NDc0NTM4OCwiZXhwIjo1MjQ0NzQ1Mzg4LCJuYmYiOjE2NDQ3NDUzODgsImp0aSI6IlJwWVhVblNrbGl2ZFlyczgiLCJzdWIiOjU3LCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.UX0P0uyRDVSRtijdL9fR8280tNJVMnfHflW9neJQAbg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "ahmed2021",
+									"type": "default"
+								},
+								{
+									"key": "email",
+									"value": "ahmed2020@mail.com",
+									"type": "default",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "default",
+									"disabled": true
+								},
+								{
+									"key": "password_confirmation",
+									"value": "123456789",
+									"type": "default",
+									"disabled": true
+								},
+								{
+									"key": "gender",
+									"value": "male",
+									"type": "default",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "https://admin.afraah.com/api/auth/user-profile-update",
+							"protocol": "https",
+							"host": [
+								"admin",
+								"afraah",
+								"com"
+							],
+							"path": [
+								"api",
+								"auth",
+								"user-profile-update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1MiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvYWRtaW4uYWZyYWFoLmNvbVwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY0NDc0NTM4OCwiZXhwIjo1MjQ0NzQ1Mzg4LCJuYmYiOjE2NDQ3NDUzODgsImp0aSI6IlJwWVhVblNrbGl2ZFlyczgiLCJzdWIiOjU3LCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.UX0P0uyRDVSRtijdL9fR8280tNJVMnfHflW9neJQAbg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "ahmed2021",
+									"type": "default",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "ahmed2020@mail.com",
+									"type": "default",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "default",
+									"disabled": true
+								},
+								{
+									"key": "password_confirmation",
+									"value": "123456789",
+									"type": "default",
+									"disabled": true
+								},
+								{
+									"key": "gender",
+									"value": "male",
+									"type": "default",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "https://admin.afraah.com/api/auth/logout",
+							"protocol": "https",
+							"host": [
+								"admin",
+								"afraah",
+								"com"
+							],
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Hotels",
+			"item": [
+				{
+					"name": "All Hotels",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1MiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvYWRtaW4uYWZyYWFoLmNvbVwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY0OTA2NTU5OCwiZXhwIjo1MjQ5MDY1NTk4LCJuYmYiOjE2NDkwNjU1OTgsImp0aSI6IjhjaEMzQURLR1hlRlBmODYiLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.EuFzeDEEKlV0a5V8N4g8faFeFvrvMD_cTrPEIQHB5g0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://admin.afraah.com/api/hotels/2/1/1/1/ar",
+							"protocol": "https",
+							"host": [
+								"admin",
+								"afraah",
+								"com"
+							],
+							"path": [
+								"api",
+								"hotels",
+								"2",
+								"1",
+								"1",
+								"1",
+								"ar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "hotels in specific country",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://admin.afraah.com/api/hotels/1/ar",
+							"protocol": "https",
+							"host": [
+								"admin",
+								"afraah",
+								"com"
+							],
+							"path": [
+								"api",
+								"hotels",
+								"1",
+								"ar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Featured",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://admin.afraah.com/api/hotels/featured/1/ar",
+							"protocol": "https",
+							"host": [
+								"admin",
+								"afraah",
+								"com"
+							],
+							"path": [
+								"api",
+								"hotels",
+								"featured",
+								"1",
+								"ar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Single",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://admin.afraah.com/api/single-hotel/1/ar",
+							"protocol": "https",
+							"host": [
+								"admin",
+								"afraah",
+								"com"
+							],
+							"path": [
+								"api",
+								"single-hotel",
+								"1",
+								"ar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Hotel Like",
+			"item": [
+				{
+					"name": "insert",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "article_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "user_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "service_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "like_type",
+									"value": "",
+									"description": "1->like ,else->0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://admin.afraah.com/api/hotel-like",
+							"protocol": "https",
+							"host": [
+								"admin",
+								"afraah",
+								"com"
+							],
+							"path": [
+								"api",
+								"hotel-like"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Profile Likes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "article_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "user_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "service_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "like_type",
+									"value": "",
+									"description": "1->like ,else->0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://admin.afraah.com/api/hotel-profile-likes/1/ar",
+							"protocol": "https",
+							"host": [
+								"admin",
+								"afraah",
+								"com"
+							],
+							"path": [
+								"api",
+								"hotel-profile-likes",
+								"1",
+								"ar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Garden && Clubs Likes",
+			"item": [
+				{
+					"name": "insert",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "article_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "user_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "service_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "like_type",
+									"value": "",
+									"description": "1->like ,else->0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://admin.afraah.com/api/garden-club-like",
+							"protocol": "https",
+							"host": [
+								"admin",
+								"afraah",
+								"com"
+							],
+							"path": [
+								"api",
+								"garden-club-like"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Profile Likes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "article_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "user_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "service_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "like_type",
+									"value": "",
+									"description": "1->like ,else->0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://admin.afraah.com/api/garden-club-profile-likes/1/ar",
+							"protocol": "https",
+							"host": [
+								"admin",
+								"afraah",
+								"com"
+							],
+							"path": [
+								"api",
+								"garden-club-profile-likes",
+								"1",
+								"ar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Hotel Comments",
+			"item": [
+				{
+					"name": "Insert",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "hotel_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "comment",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "rate",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://admin.afraah.com/api/hotel-comment",
+							"protocol": "https",
+							"host": [
+								"admin",
+								"afraah",
+								"com"
+							],
+							"path": [
+								"api",
+								"hotel-comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Hotel comments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://admin.afraah.com/api/show-hotel-comment/1",
+							"protocol": "https",
+							"host": [
+								"admin",
+								"afraah",
+								"com"
+							],
+							"path": [
+								"api",
+								"show-hotel-comment",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
