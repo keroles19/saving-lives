@@ -2,7 +2,7 @@
 
 @section('content')
 
-    @include('front.layout._crumb',['page_name'=>'Article'])
+{{--    @include('front.layout._crumb',['page_name'=>'Article'])--}}
 
 
 

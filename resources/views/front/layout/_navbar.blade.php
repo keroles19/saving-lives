@@ -14,10 +14,24 @@
                         <a class="nav-link" href="{{route('about')}}">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn btn-primary ml-lg-3" href="#">Login / Register</a>
+                        <a class="btn btn-primary ml-lg-3" href="{{route('register')}}">
+                            Let's Start
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-success ml-lg-3" data-bs-toggle="modal" data-bs-target="#addNewObligation">
+                            Obligation
+                        </button>
                     </li>
                 </ul>
             </div> <!-- .navbar-collapse -->
         </div> <!-- .container -->
     </nav>
 </header>
+
+
+
+@section('js')
+
+
+@endsection

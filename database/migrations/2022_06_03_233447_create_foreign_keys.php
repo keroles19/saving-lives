@@ -8,8 +8,8 @@ class CreateForeignKeys extends Migration {
 
 	public function up()
 	{
-		Schema::table('users', function(Blueprint $table) {
-			$table->foreign('country_id')->references('id')->on('users')
+		Schema::table('hospitals', function(Blueprint $table) {
+			$table->foreign('country_id')->references('id')->on('hospitals')
 						->onDelete('cascade')
 						->onUpdate('cascade');
 		});
@@ -19,12 +19,12 @@ class CreateForeignKeys extends Migration {
 						->onUpdate('cascade');
 		});
 		Schema::table('donors', function(Blueprint $table) {
-			$table->foreign('hospital_id')->references('id')->on('users')
+			$table->foreign('hospital_id')->references('id')->on('hospitals')
 						->onDelete('set null')
 						->onUpdate('cascade');
 		});
 		Schema::table('receivers', function(Blueprint $table) {
-			$table->foreign('hospital_id')->references('id')->on('users')
+			$table->foreign('hospital_id')->references('id')->on('hospitals')
 						->onDelete('set null')
 						->onUpdate('cascade');
 		});
@@ -42,8 +42,8 @@ class CreateForeignKeys extends Migration {
 
 	public function down()
 	{
-		Schema::table('users', function(Blueprint $table) {
-			$table->dropForeign('users_country_id_foreign');
+		Schema::table('hospitals', function(Blueprint $table) {
+			$table->dropForeign('hospitals_country_id_foreign');
 		});
 		Schema::table('donors', function(Blueprint $table) {
 			$table->dropForeign('donors_organ_id_foreign');

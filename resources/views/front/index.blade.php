@@ -5,8 +5,13 @@
         <div class="hero-section">
             <div class="container text-center wow zoomIn">
                 <span class="subhead">{{$setting->subhead}}</span>
-                <h1 class="display-4">{{env('APP_NAME')}}</h1>
-                <a href="#" class="btn btn-primary">Login/Register</a>
+                <h1 class="display-4 text-white">{{env('APP_NAME')}}</h1>
+                <a href="{{route('register')}}" class="btn btn-primary">
+                    START NOW
+                </a>
+                <button class="btn btn-success ml-lg-3" data-bs-toggle="modal" data-bs-target="#addNewObligation">
+                    Obligation
+                </button>
             </div>
         </div>
     </div>

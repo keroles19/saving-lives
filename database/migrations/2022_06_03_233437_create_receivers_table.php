@@ -15,14 +15,15 @@ class CreateReceiversTable extends Migration {
 			$table->string('address');
 			$table->bigInteger('national_number')->unique();
 			$table->enum('blood_type', array('A', 'A+', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'));
-			$table->string('files')->nullable();
+//			$table->string('files')->nullable();
 			$table->string('description')->nullable();
-			$table->timestamps();
 			$table->tinyInteger('status')->default('1');
 			$table->integer('hospital_id')->unsigned()->nullable();
 			$table->integer('donor_id')->unsigned()->nullable();
 			$table->integer('organ_id')->unsigned();
-		});
+            $table->timestamps();
+
+        });
 	}
 
 	public function down()

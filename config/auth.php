@@ -36,9 +36,21 @@ return [
     */
 
     'guards' => [
-        'web' => [
+        'web'=>[
+          'driver'=>'session',
+          'provider'=>'users'
+        ],
+        'hospital'=>[
+          'driver'=>'session',
+          'provider'=>'hospitals'
+        ],
+        'donor' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'donors',
+        ],
+        'receiver' => [
+            'driver' => 'session',
+            'provider' => 'receivers',
         ],
     ],
 
@@ -60,9 +72,22 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        'users'=>[
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+        ],
+        'hospitals'=>[
+            'driver' => 'eloquent',
+            'model' => App\Models\Hospital::class,
+        ],
+        'donors' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Donor::class,
+        ],
+
+        'receivers' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Receiver::class,
         ],
 
         // 'users' => [

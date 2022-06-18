@@ -4,6 +4,16 @@
 
 @yield('content')
 
+
+
+
+
+
+
+
+
+
+
 @include('front.layout._footer')
 
 

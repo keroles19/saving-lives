@@ -12,7 +12,7 @@ class CreateObligationsTable extends Migration {
 			$table->string('full_name');
 			$table->string('national_number')->unique();
 			$table->boolean('obligation_accept');
-			$table->integer('number')->unique();
+			$table->string('number')->unique();
 			$table->timestamps();
 		});
 	}

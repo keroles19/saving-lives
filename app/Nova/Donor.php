@@ -23,12 +23,6 @@ class Donor extends Resource
      */
     public static $model = \App\Models\Donor::class;
 
-    public static function indexQuery(NovaRequest $request, $query)
-    {
-//        if($request->user()->is_admin == 0)
-//        return $query->whereDoesntHave('reciever');
-
-    }
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -55,9 +49,6 @@ class Donor extends Resource
      */
     public function fields(Request $request)
     {
-        //'full_name', 'email', 'phone', 'address', 'password', 'national_number', 'blood_type',
-        // 'description', 'fiels', 'organ_id', 'status', 'hospital_id'
-
         return [
             ID::make(__('ID'), 'id')->sortable(),
             Text::make('Full Name'),
@@ -69,7 +60,7 @@ class Donor extends Resource
             Text::make('Description')->onlyOnDetail(),
 //            ImageUploadPreview::make('Files')->disk('files')->onlyOnDetail(),
             MorphedByMany::make('Organ')->onlyOnDetail(),
-            BelongsTo::make('Hospital', 'Hospital', 'App\Nova\User'),
+            BelongsTo::make('Hospital', 'Hospital', 'App\Nova\Hospital'),
             Boolean::make('Status')
         ];
     }

@@ -9,9 +9,10 @@ class CreateOrgansTable extends Migration {
 	{
 		Schema::create('organs', function(Blueprint $table) {
 			$table->increments('id');
-			$table->timestamps();
 			$table->string('organ_name');
-		});
+            $table->timestamps();
+
+        });
 	}
 
 	public function down()

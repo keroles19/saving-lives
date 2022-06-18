@@ -2,6 +2,13 @@
 
 namespace App\Providers;
 
+use App\Nova\Metrics\NeWDonor;
+use App\Nova\Metrics\NewHospital;
+use App\Nova\Metrics\NewReceiver;
+use App\Nova\Metrics\ObligationBlan;
+use App\Nova\Metrics\ObligationPerDay;
+use App\Nova\Metrics\OperationBlan;
+use App\Nova\Metrics\OperationPerDay;
 use Illuminate\Support\Facades\Gate;
 use Infinety\Filemanager\FilemanagerTool;
 use Laravel\Nova\Cards\Help;
@@ -54,6 +61,13 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     protected function cards()
     {
         return [
+            new ObligationPerDay(),
+            new NeWDonor(),
+          new NewReceiver(),
+          new NewHospital(),
+          new OperationBlan(),
+          New OperationPerDay(),
+
 
         ];
     }

@@ -8,6 +8,7 @@ use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\MorphedByMany;
 use Laravel\Nova\Fields\MorphMany;
 use Laravel\Nova\Fields\MorphToMany;
 use Laravel\Nova\Fields\Text;
@@ -66,29 +67,19 @@ class Receiver extends Resource
         //// 'national_number', 'blood_type', 'files', 'description',
         /// 'donor_id', 'organ_id', 'status', 'hospital_id');
         return [
-//            ID::make(__('ID'), 'id')->sortable(),
-            Text::make('Full Name')->readonly(),
-//            BelongsTo::make('Donor', 'donor', 'App\Nova\Donor'),
-            Text::make('Email')->readonly()->canSee(function (){
-                return isAdmin();
-            }),
-            Text::make('Phone')->readonly(),
-            Text::make('Address')->readonly(),
+           ID::make(__('ID'), 'id')->sortable(),
+            Text::make('Full Name'),
+            Text::make('Email'),
+            Text::make('Phone')->onlyOnDetail(),
+            Text::make('Address')->onlyOnDetail(),
             Text::make('National Number','national_number'),
-            Text::make('Blood Type','blood_type')->sortable(),
-            Text::make('Description')->readonly(),
-            ImageUploadPreview::make('Files')->disk('files')->onlyOnDetail(),
-
-            SearchableSelect::make("Donor", "donor_id")->resource(\App\Nova\Donor::class)
-            ,
-
-            BelongsTo::make('Hospital', 'Hospital', 'App\Nova\User')->canSee(function (){
-                return isAdmin();
-            }),
-            Boolean::make('Status')->canSee(function (){
-                return isAdmin();
-            })
-        ];
+            Text::make('Blood Type','blood_type'),
+            Text::make('Description')->onlyOnDetail(),
+            BelongsTo::make('Organ')->onlyOnDetail(),
+            BelongsTo::make('Donor')->onlyOnDetail(),
+            BelongsTo::make('Hospital', 'Hospital', 'App\Nova\Hospital'),
+            Boolean::make('Status')
+            ];
     }
 
     /**

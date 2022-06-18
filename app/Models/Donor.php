@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Donor extends Model 
+class Donor extends Model
 {
 
     protected $table = 'donors';
@@ -19,7 +19,7 @@ class Donor extends Model
 
     public function hospital()
     {
-        return $this->belongsTo('App\Models\User', 'hospital_id');
+        return $this->belongsTo('App\Models\Hospital', 'hospital_id');
     }
 
     public function receiver()

@@ -4,12 +4,18 @@ namespace App\Providers;
 
 use App\Models\Article;
 use App\Models\Country;
+use App\Models\Donor;
+use App\Models\Hospital;
+use App\Models\Obligation;
 use App\Models\Organ;
 use App\Models\Receiver;
 use App\Models\Setting;
 use App\Models\User;
 use App\Policies\ArticlePolicy;
 use App\Policies\CountryPolicy;
+use App\Policies\DonorPolicy;
+use App\Policies\HospitalPolicy;
+use App\Policies\ObligationPolicy;
 use App\Policies\OrganPolicy;
 use App\Policies\ReceiverPolicy;
 use App\Policies\SettingPolicy;
@@ -35,6 +41,9 @@ class AuthServiceProvider extends ServiceProvider
         Organ::class =>OrganPolicy::class,
         Receiver::class =>ReceiverPolicy::class,
         Setting::class =>SettingPolicy::class,
+        Donor::class =>DonorPolicy::class,
+        Hospital::class => HospitalPolicy::class,
+        Obligation::class => ObligationPolicy::class
 
 
     ];
@@ -43,6 +52,9 @@ class AuthServiceProvider extends ServiceProvider
             //'viewBlog',
             //'manageBlog',
             'manageHospital',
+            'manageDonor',
+            'manageObligation',
+            'manageReceiver',
     ];
 
     /**

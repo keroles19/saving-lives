@@ -20,7 +20,7 @@ class Receiver extends Model
 
     public function hospital()
     {
-        return $this->belongsTo('App\Models\User', 'hospital_id');
+        return $this->belongsTo('App\Models\Hospital', 'hospital_id');
     }
 
     public function donor()

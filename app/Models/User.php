@@ -56,14 +56,5 @@ class User extends Authenticatable
         return $this->belongsTo('App\Models\Country');
     }
 
-    public function donors()
-    {
-        return $this->hasMany('App\Models\Donor');
-    }
-
-    public function receivers()
-    {
-        return $this->hasMany('App\Models\Receiver');
-    }
 
 }

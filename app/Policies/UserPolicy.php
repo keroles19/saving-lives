@@ -17,7 +17,7 @@ class UserPolicy
      */
     public function viewAny(User $user)
     {
-        return isAdmin() ||  $user->can('manageHospital');
+        return isAdmin() ||  $user->can('manageUser');
     }
 
     /**
@@ -29,7 +29,7 @@ class UserPolicy
      */
     public function view(User $user, User $model)
     {
-        return isAdmin() ||  $user->can('manageHospital');
+        return isAdmin() ||  $user->can('manageUser');
 
     }
 
@@ -54,7 +54,7 @@ class UserPolicy
      */
     public function update(User $user, User $model)
     {
-        return isAdmin() ||  $user->can('manageHospital');
+        return isAdmin() ||  $user->can('manageUser');
 
     }
 

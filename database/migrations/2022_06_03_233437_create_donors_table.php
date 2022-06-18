@@ -13,16 +13,16 @@ class CreateDonorsTable extends Migration {
 			$table->string('email')->unique();
 			$table->string('phone');
 			$table->string('address')->nullable();
-			$table->string('password');
 			$table->bigInteger('national_number')->unique();
 			$table->enum('blood_type', array('A', 'A+', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'));
 			$table->string('description')->nullable();
-			$table->string('files')->nullable();
-			$table->timestamps();
+//			$table->string('files')->nullable();
 			$table->tinyInteger('status')->default('1');
 			$table->integer('organ_id')->unsigned();
 			$table->integer('hospital_id')->unsigned()->nullable();
-		});
+            $table->timestamps();
+
+        });
 	}
 
 	public function down()

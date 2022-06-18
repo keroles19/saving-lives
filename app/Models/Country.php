@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Country extends Model 
+class Country extends Model
 {
 
     protected $table = 'countries';
@@ -13,7 +13,7 @@ class Country extends Model
 
     public function hospitals()
     {
-        return $this->hasMany('App\Models\User');
+        return $this->hasMany('App\Models\Hospital');
     }
 
     public function donors()
