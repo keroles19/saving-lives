@@ -75,7 +75,7 @@ class Receiver extends Resource
             Text::make('National Number','national_number'),
             Text::make('Blood Type','blood_type'),
             Text::make('Description')->onlyOnDetail(),
-            BelongsTo::make('Organ')->onlyOnDetail(),
+            BelongsTo::make('Organ'),
             BelongsTo::make('Donor')->onlyOnDetail(),
             BelongsTo::make('Hospital', 'Hospital', 'App\Nova\Hospital'),
             Boolean::make('Status')

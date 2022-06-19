@@ -59,7 +59,7 @@ class Donor extends Resource
             Text::make('Blood Type','blood_type'),
             Text::make('Description')->onlyOnDetail(),
 //            ImageUploadPreview::make('Files')->disk('files')->onlyOnDetail(),
-            MorphedByMany::make('Organ')->onlyOnDetail(),
+            BelongsTo::make('Organ'),
             BelongsTo::make('Hospital', 'Hospital', 'App\Nova\Hospital'),
             Boolean::make('Status')
         ];
