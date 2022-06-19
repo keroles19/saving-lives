@@ -69,7 +69,9 @@ class Hospital extends Resource
                 ->onlyOnForms()
                 ->creationRules('required', 'string', 'min:8')
                 ->updateRules('nullable', 'string', 'min:8'),
-
+            FilemanagerField::make('Photo')->folder('Users')->displayAsImage()->canSee(function (){
+                return isAdmin();
+            })->rules('required'),
             Number::make('Phone')->required()->rules('required'),
             Text::make('Whatsapp')->required()->rules('required'),
 

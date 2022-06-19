@@ -25,7 +25,8 @@ class Hospital extends Authenticatable
         'phone',
         'whatsapp',
         'country_id',
-        'status'
+        'status',
+        'photo'
     ];
 
     /**

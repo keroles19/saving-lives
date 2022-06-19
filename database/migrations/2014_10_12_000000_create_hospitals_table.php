@@ -19,6 +19,7 @@ class CreateHospitalsTable extends Migration
             $table->string('phone');
             $table->string('whatsapp');
             $table->string('email')->unique();
+            $table->string('photo');
             $table->timestamp('email_verified_at')->nullable();
             $table->tinyInteger('status')->default('1');
             $table->string('password');
