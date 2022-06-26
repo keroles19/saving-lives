@@ -7,6 +7,7 @@ use App\Http\Requests\MakeOperationRequest;
 use App\Models\Donor;
 use App\Models\Receiver;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 class OperationController extends Controller
@@ -27,16 +28,17 @@ class OperationController extends Controller
         if(!$donor || !$receiver){
              return redirect()->back()->withErrors('The Donor Or Receiver Is Not available');
         }
-
         try {
-            $receiver->update([
-                'donor_id' => $donor->id,
-                'hospital_id' => auth()->id()
-            ]);
+            DB::transaction(function() use($receiver,$donor) {
+                $receiver->update([
+                    'donor_id' => $donor->id,
+                    'hospital_id' => auth()->id()
+                ]);
+                $donor->update([
+                    'hospital_id' => auth()->id()
+                ]);
+            });
 
-            $donor->update([
-                'hospital_id' => auth()->id()
-            ]);
           return redirect()->back()->with('success','Operation Success');
         }catch (\Exception $e){
          return redirect()->back()->withErrors( 'something error Please reload page and try again');
@@ -54,7 +56,7 @@ class OperationController extends Controller
 
     private function receiver($receiver_id){
        return Receiver::where('national_number',$receiver_id)->with('organ:id,organ_name')
-            ->where('status',1)->whereDoesntHave('donor')->whereDoesntHave('hospital')->first();
+           ->whereDoesntHave('donor')->whereDoesntHave('hospital')->where('status',1)->first();
     }
 
     public function show($id){
