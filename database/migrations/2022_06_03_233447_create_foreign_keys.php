@@ -9,7 +9,7 @@ class CreateForeignKeys extends Migration {
 	public function up()
 	{
 		Schema::table('hospitals', function(Blueprint $table) {
-			$table->foreign('country_id')->references('id')->on('hospitals')
+			$table->foreign('country_id')->references('id')->on('countries')
 						->onDelete('cascade')
 						->onUpdate('cascade');
 		});
