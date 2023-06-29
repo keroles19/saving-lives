@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\Country;
+use App\Models\Article;
 use Illuminate\Database\Seeder;
 
-class CountrySeeder extends Seeder
+class ArticleSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,11 +14,6 @@ class CountrySeeder extends Seeder
      */
     public function run()
     {
-      Country::create(
-          [
-               'id'=>1,
-               'country_name'=>'Egypt'
-          ]
-      );
+        Article::factory(20)->create();
     }
 }

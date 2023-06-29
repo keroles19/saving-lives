@@ -15,18 +15,6 @@ class SettingSeeder extends Seeder
     public function run()
     {
         //   'subhead','content', 'team_name',  'title', 'about','facebook', 'whatsapp', 'email', 'copyright'
-
-        Setting::create(
-            [
-                'subhead' => 'subhead',
-                'content' => 'content',
-                'team_name' => 'team_name',
-                'title' => 'title',
-                'about' => 'about',
-                'facebook' => 'facebook',
-                'whatsapp'=>'whatsapp',
-                'email'=>'email',
-                'copyright'=>'copyright',
-            ]);
+        Setting::factory()->create();
     }
 }
