@@ -30,11 +30,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Receiver::observe(ReceieverObserver::class);
-
-        // ==============  share setting in all site ===========
-//
-        $setting = Setting::first();
-        View::share('setting', $setting);
         Paginator::useBootstrap();
 
 
