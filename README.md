@@ -1,6 +1,6 @@
 
 ##  Saving-Lives  preview
-<video src="https://user-images.githubusercontent.com/36054945/176949763-27357a2e-08c4-4157-9df3-43349f32317d.mp4"></video>
+https://user-images.githubusercontent.com/36054945/176949763-27357a2e-08c4-4157-9df3-43349f32317d.mp4
 ## 🚀 Saving-Lives  🚀 
 A website aim to save another person’s live. People of all ages should consider themselves potential donors.
 In first the user visit our website as doner or recipient ,if doner want to donate after death he should fill in the obligation form.
